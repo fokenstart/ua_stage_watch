@@ -59,6 +59,14 @@ qui change de design), les autres continuent de tourner normalement.
    - `TELEGRAM_BOT_TOKEN`
    - `TELEGRAM_CHAT_ID`
 
+   Nom : TELEGRAM_BOT_TOKEN
+
+Valeur : 8973425802:AAFw7pe6pWp1iQq-8dY_YPPsDDtac42-l2g
+
+Nom : TELEGRAM_CHAT_ID
+
+Valeur : 1472499512
+
 ### c) Lancer un premier test manuel
 Dans l'onglet **Actions** de ton repo GitHub → sélectionne le workflow
 "Veille quotidienne des stages" → bouton **"Run workflow"** (disponible
