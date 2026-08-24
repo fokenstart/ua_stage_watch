@@ -19,8 +19,14 @@ def title_matches(title: str, include: Iterable[str], exclude: Iterable[str]) ->
         return False
 
     title_lower = title.lower()
+    include_list = [kw for kw in (include or []) if kw]
+    exclude_list = [kw for kw in (exclude or []) if kw]
 
-    if any(bad.lower() in title_lower for bad in exclude):
+    if any(bad.lower() in title_lower for bad in exclude_list):
         return False
 
-    return any(good.lower() in title_lower for good in include)
+    # Liste include vide = aucun filtre d'inclusion (utile en test local).
+    if not include_list:
+        return True
+
+    return any(good.lower() in title_lower for good in include_list)

@@ -23,9 +23,9 @@ config/companies.yaml   ← LE fichier à éditer pour ajouter boîtes/plateform
         │
         ├─► keyword_filter.py   (garde uniquement stage/junior/intern...)
         ├─► state.py            (dédup: quelles offres déjà notifiées ?)
-        └─► notifier.py         (envoi Telegram)
+        └─► notifier/           (envoi Telegram)
 
-.github/workflows/daily_scrape.yml  ← exécute main.py chaque jour, tout seul
+.github/workflows/daily_watch.yml  ← exécute main.py chaque jour, tout seul
 data/seen_jobs.json                 ← mémoire persistante (commitée par le bot)
 ```
 
@@ -46,7 +46,7 @@ qui change de design), les autres continuent de tourner normalement.
    git push -u origin main
    ```
 
-### b) Configurer le bot Telegram (PLACEHOLDER — voir notifier.py aussi)
+### b) Configurer le bot Telegram (PLACEHOLDER — voir notifier/)
 1. Sur Telegram, cherche `@BotFather`, envoie `/newbot`, suis les
    instructions → tu obtiens un **TOKEN**.
 2. Démarre une conversation avec ton nouveau bot (cherche son
@@ -70,14 +70,14 @@ décrit ci-dessous.
 
 | # | Fichier | Ce qu'il faut faire |
 |---|---|---|
-| 1 | `notifier.py` | Créer le bot Telegram + secrets GitHub (voir 2.b ci-dessus) |
+| 1 | `notifier/` | Créer le bot Telegram + secrets GitHub (voir 2.b ci-dessus) |
 | 2 | `scrapers/robota_html.py` | Vérifier/ajuster `JOB_LINK_SELECTOR` en inspectant le HTML réel dans le navigateur |
 | 3 | `scrapers/workua_html.py` | Idem, vérifier/ajuster `JOB_LINK_SELECTOR` |
 | 4 | `scrapers/jooble_html.py` | Idem, vérifier/ajuster `JOB_LINK_SELECTOR` |
 | 5 | `scrapers/workable_api.py` | Confirmer l'endpoint JSON exact via DevTools (méthode détaillée dans le fichier) |
 | 6 | `config/companies.yaml` — EY | Trouver l'ID entreprise EY sur robota.ua et work.ua (actuellement basé sur une recherche générique, moins précis) |
 | 7 | `config/companies.yaml` — Deloitte/PwC/EY sites propres | Ces 3 sites carrière semblent nécessiter du JS → voir `scrapers/html_js_playwright.py` pour la marche à suivre (chercher d'abord un endpoint JSON caché avant de sortir Playwright) |
-| 8 | `.github/workflows/daily_scrape.yml` | Ajuster l'heure du cron si tu veux un autre horaire que 07h00 UTC |
+| 8 | `.github/workflows/daily_watch.yml` | Ajuster l'heure du cron si tu veux un autre horaire que 07h00 UTC |
 
 **Comment trouver/ajuster un sélecteur CSS (technique commune aux points 2, 3, 4) :**
 1. Ouvre la page dans Chrome/Firefox.

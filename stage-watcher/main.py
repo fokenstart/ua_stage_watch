@@ -9,12 +9,13 @@ Point d'entrée principal — orchestre tout le pipeline :
   6. Sauvegarde le nouvel état
 
 Exécuté automatiquement chaque jour par GitHub Actions
-(.github/workflows/daily_scrape.yml), mais peut aussi tourner en local :
+(.github/workflows/daily_watch.yml), mais peut aussi tourner en local :
 
     pip install -r requirements.txt
-    export TELEGRAM_BOT_TOKEN="..."
-    export TELEGRAM_CHAT_ID="..."
     python main.py
+
+Sans TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID, le run va jusqu’au bout
+et imprime dans le terminal les messages qui auraient été envoyés.
 """
 
 import os
@@ -40,9 +41,9 @@ def load_config() -> dict:
 
 def run() -> None:
     config = load_config()
-    companies = config.get("companies", [])
-    include_kw = config.get("keywords_include", [])
-    exclude_kw = config.get("keywords_exclude", [])
+    companies = config.get("companies") or []
+    include_kw = config.get("keywords_include") or []
+    exclude_kw = config.get("keywords_exclude") or []
 
     seen_ids = load_seen_ids()
     updated_ids = set(seen_ids)  # copie qu'on va enrichir au fil du run
@@ -76,12 +77,17 @@ def run() -> None:
             print(f"[main]    {len(jobs)} offre(s) brute(s) trouvée(s).")
 
             for job in jobs:
-                title = job.get("title", "")
+                title = (job.get("title") or "").strip()
+                native_id = job.get("native_id")
+                job_url = job.get("url")
+
+                if not native_id or not job_url:
+                    continue
 
                 if not title_matches(title, include_kw, exclude_kw):
                     continue  # ne correspond pas aux mots-clés de veille stage/junior
 
-                job_id = make_job_id(company_name, source_type, job["native_id"])
+                job_id = make_job_id(company_name, source_type, native_id)
 
                 if job_id in seen_ids:
                     continue  # déjà notifié lors d'un run précédent
@@ -91,7 +97,7 @@ def run() -> None:
                     "company": company_name,
                     "source_label": source_label,
                     "title": title,
-                    "url": job["url"],
+                    "url": job_url,
                 })
 
             time.sleep(DELAY_BETWEEN_REQUESTS_SECONDS)

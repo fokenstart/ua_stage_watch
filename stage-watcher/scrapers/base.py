@@ -13,7 +13,20 @@ identique, quel que soit le type de plateforme derrière.
 """
 
 from abc import ABC, abstractmethod
+from dataclasses import dataclass
 import hashlib
+
+
+@dataclass
+class Offer:
+    """Ancien contrat (fichiers hérités). Le pipeline actif utilise des dicts."""
+    title: str = ""
+    url: str = ""
+    company: str = ""
+    platform: str = ""
+    native_id: str = ""
+    description: str = ""
+    id: str = ""
 
 
 class BaseScraper(ABC):

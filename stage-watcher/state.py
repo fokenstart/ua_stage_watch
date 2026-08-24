@@ -2,7 +2,7 @@
 Gestion de l'état persistant : quelles offres ont déjà été notifiées.
 
 Le fichier data/seen_jobs.json est commité dans le repo Git à chaque run
-par la GitHub Action (voir .github/workflows/daily_scrape.yml), ce qui sert
+par la GitHub Action (voir .github/workflows/daily_watch.yml), ce qui sert
 de "base de données" gratuite sans serveur externe.
 
 Format du fichier :

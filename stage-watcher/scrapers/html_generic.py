@@ -60,6 +60,11 @@ class HtmlGenericScraper(BaseScraper):
         job_link_selector = selectors.get("job_link")
         title_selector = selectors.get("title")  # optionnel
 
+        if not job_link_selector:
+            print(f"[html_generic] 'selectors.job_link' manquant pour {url} "
+                  f"-> source ignorée.")
+            return []
+
         try:
             resp = requests.get(url, headers=HEADERS, timeout=15)
             resp.raise_for_status()

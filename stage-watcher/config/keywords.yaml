@@ -1,4 +1,9 @@
 # =============================================================================
+# FILTRAGE PAR MOTS-CLÉS — FICHIER NON LU PAR main.py
+# Le runtime utilise keywords_include / keywords_exclude dans companies.yaml.
+# Ce fichier est un brouillon / référence ; le garder aligné à la main si tu
+# modifies les listes.
+# =============================================================================
 # FILTRAGE PAR MOTS-CLÉS — sans IA, string matching uniquement
 # =============================================================================
 # Chaque offre récupérée par les scrapers est testée sur ces règles :
