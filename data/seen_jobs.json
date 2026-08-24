@@ -1,8 +1,9 @@
 {
   "job_ids": [
+    "kpmg::dou_rss::?utm_source=jobsrss",
     "kpmg::workable_api::1b11090797",
     "kpmg::workable_api::3e7ab3a77f",
     "kpmg::workable_api::7e1e493be5"
   ],
-  "last_run": "2026-08-24T11:39:28.353441+00:00"
+  "last_run": "2026-08-24T12:26:54.348744+00:00"
 }
