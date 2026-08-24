@@ -1,0 +1,135 @@
+# =============================================================================
+# CONFIG CENTRALE — c'est LE fichier à éditer pour ajouter une entreprise
+# ou une plateforme. Le reste du code ne bouge pas.
+# =============================================================================
+#
+# Structure par entreprise :
+#   name:        nom affiché dans Telegram
+#   sources:     liste de sources à surveiller. Chaque source a :
+#     type:      quel scraper utiliser (voir scrapers/registry.py)
+#     url/slug:  paramètre spécifique au scraper (voir commentaires par type)
+#     label:     nom affiché dans la notif Telegram (ex "DOU", "robota.ua")
+#
+# Types de scraper disponibles (voir scrapers/registry.py pour la liste complète) :
+#   - dou_rss        : flux RSS natif DOU. Param: slug (ex "kpmg")
+#   - workable_api   : API JSON Workable. Param: account (ex "kpmg-ukraine")
+#   - html_generic   : scraping HTML statique générique. Param: url + selectors
+#   - robota_html    : scraping robota.ua (structure spécifique)
+#   - workua_html    : scraping work.ua (structure spécifique)
+#   - jooble_html    : scraping page de résultats Jooble UA
+#
+# ⚠️ PLACEHOLDER = à vérifier/compléter manuellement (voir README section "TODO")
+# =============================================================================
+
+companies:
+
+  - name: "Deloitte"
+    sources:
+      - type: dou_rss
+        slug: "deloitte"
+        label: "DOU"
+      - type: workua_html
+        company_id: "1685297"     # tiré de work.ua/en/jobs/by-company/1685297/
+        label: "Work.ua"
+      - type: robota_html
+        company_id: "826651"      # tiré de robota.ua/ua/company826651
+        label: "robota.ua"
+      - type: jooble_html
+        # PLACEHOLDER: l'URL Jooble contient du cyrillique encodé, à copier
+        # tel quel depuis ton navigateur si le lien ci-dessous casse.
+        url: "https://ua.jooble.org/робота-deloitte"
+        label: "Jooble UA"
+      - type: html_generic
+        url: "https://www2.deloitte.com/ua/uk/careers.html"
+        label: "Site carrière Deloitte"
+        selectors: null   # PLACEHOLDER: site probablement JS -> voir README §3
+
+  - name: "PwC"
+    sources:
+      - type: workua_html
+        company_id: "71425"
+        label: "Work.ua"
+      - type: html_generic
+        url: "https://jobs-cee.pwc.com/ua/ua/search-results"
+        label: "Site carrière PwC (CEE)"
+        selectors: null   # PLACEHOLDER: à vérifier, probablement rendu JS (SuccessFactors)
+
+  - name: "EY"
+    sources:
+      - type: robota_html
+        # PLACEHOLDER: EY est référencé via une page de recherche générique
+        # robota.ua/zapros/stazhuvannya/ukraine et non une page /companyXXXX.
+        # Il faut soit trouver l'ID company EY dédié, soit filtrer les
+        # résultats de cette recherche générique par mot-clé "EY" côté script.
+        company_id: null
+        search_fallback_url: "https://robota.ua/zapros/stazhuvannya/ukraine"
+        label: "robota.ua"
+      - type: workua_html
+        # PLACEHOLDER: même souci, l'URL fournie est une recherche par mot-clé
+        # ("стажировка") et pas une page entreprise dédiée -> à remplacer par
+        # work.ua/jobs/by-company/<ID_EY> si tu trouves l'ID exact.
+        company_id: null
+        search_fallback_url: "https://www.work.ua/en/jobs-стажировка/"
+        label: "Work.ua"
+      - type: html_generic
+        url: "https://www.ey.com/uk_ua/careers/job-search"
+        label: "Site carrière EY"
+        selectors: null   # PLACEHOLDER: à vérifier, souvent rendu JS
+
+  - name: "KPMG"
+    sources:
+      - type: dou_rss
+        slug: "kpmg"
+        label: "DOU"
+      - type: workua_html
+        company_id: "73546"
+        label: "Work.ua"
+      - type: robota_html
+        company_id: "567736"
+        label: "robota.ua"
+      - type: workable_api
+        account: "kpmg-ukraine"   # tiré de apply.workable.com/kpmg-ukraine
+        label: "Workable (site carrière officiel)"
+
+  # ---------------------------------------------------------------------
+  # EXEMPLE pour ajouter une nouvelle boîte hors Big4 (ex: BDO) :
+  # décommente et adapte, c'est tout ce qu'il faut faire.
+  # ---------------------------------------------------------------------
+  # - name: "BDO"
+  #   sources:
+  #     - type: dou_rss
+  #       slug: "bdo"
+  #       label: "DOU"
+  #     - type: workua_html
+  #       company_id: "XXXXX"
+  #       label: "Work.ua"
+
+# =============================================================================
+# MOTS-CLÉS DE FILTRAGE — une offre n'est notifiée que si son titre contient
+# au moins un de ces mots (insensible à la casse). Modifie librement.
+# =============================================================================
+keywords_include:
+  # Ukrainien
+  - "стажування"
+  - "стажер"
+  - "стажист"
+  - "інтерн"
+  - "практика"
+  - "для студентів"
+  - "junior"
+  - "молодший"
+  - "trainee"
+  # Anglais
+  - "internship"
+  - "intern"
+  - "graduate program"
+  - "student"
+
+# Mots qui EXCLUENT une offre même si un mot-clé ci-dessus matche
+# (ex: éviter "Senior Intern Manager" ou des faux positifs seniors)
+keywords_exclude:
+  - "senior"
+  - "lead "
+  - "head of"
+  - "director"
+  - "manager (5+"

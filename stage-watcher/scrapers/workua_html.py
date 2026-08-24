@@ -1,0 +1,76 @@
+"""
+Scraper work.ua — page entreprise (ex: work.ua/en/jobs/by-company/1685297/).
+
+⚠️ PLACEHOLDER À VÉRIFIER (même logique que robota_html.py) : work.ua est
+en général une des plateformes les PLUS FACILES à scraper car son HTML est
+majoritairement statique (généré côté serveur), mais le sélecteur exact
+ci-dessous reste une estimation à confirmer.
+
+Comment corriger si ça ne matche rien : identique à robota_html.py —
+inspecte un lien d'offre dans le navigateur, ajuste JOB_LINK_SELECTOR.
+"""
+
+import requests
+from bs4 import BeautifulSoup
+
+from .base import BaseScraper
+
+JOB_LINK_SELECTOR = "h2 a[href*='/jobs/']"  # PLACEHOLDER à ajuster
+BASE_URL = "https://www.work.ua"
+
+HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                  "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
+}
+
+
+class WorkUaHtmlScraper(BaseScraper):
+    source_type = "workua_html"
+
+    def fetch(self, source_config: dict) -> list[dict]:
+        company_id = source_config.get("company_id")
+        fallback_url = source_config.get("search_fallback_url")
+
+        if company_id:
+            url = f"{BASE_URL}/en/jobs/by-company/{company_id}/"
+        elif fallback_url:
+            url = fallback_url
+        else:
+            print(f"[workua_html] Ni company_id ni search_fallback_url: {source_config}")
+            return []
+
+        try:
+            resp = requests.get(url, headers=HEADERS, timeout=15)
+            resp.raise_for_status()
+        except requests.RequestException as e:
+            print(f"[workua_html] Erreur fetch {url}: {e}")
+            return []
+
+        soup = BeautifulSoup(resp.text, "html.parser")
+        links = soup.select(JOB_LINK_SELECTOR)
+
+        if not links:
+            print(f"[workua_html] 0 offre trouvée sur {url} — "
+                  f"vérifie/ajuste JOB_LINK_SELECTOR (voir en-tête du fichier).")
+            return []
+
+        jobs = []
+        seen_hrefs = set()
+        for link in links:
+            href = link.get("href", "")
+            if not href or href in seen_hrefs:
+                continue
+            seen_hrefs.add(href)
+
+            full_url = href if href.startswith("http") else f"{BASE_URL}{href}"
+            title = link.get_text(strip=True)
+            native_id = href.rstrip("/").split("/")[-1] or self.hash_url(full_url)
+
+            if title:
+                jobs.append({
+                    "native_id": native_id,
+                    "title": title,
+                    "url": full_url,
+                })
+
+        return jobs

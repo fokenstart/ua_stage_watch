@@ -1,0 +1,56 @@
+# =============================================================================
+# WORKFLOW GITHUB ACTIONS — exécution quotidienne automatique et gratuite
+# =============================================================================
+# PLACEHOLDER — SETUP DES SECRETS (à faire une seule fois sur GitHub) :
+#   Repo GitHub > Settings > Secrets and variables > Actions > New repository secret
+#   Ajoute ces 3 secrets (voir docstrings de telegram.py et jooble.py pour les obtenir) :
+#     - TELEGRAM_BOT_TOKEN
+#     - TELEGRAM_CHAT_ID
+#     - JOOBLE_API_KEY        (optionnel, seulement si tu actives le scraper Jooble)
+# =============================================================================
+
+name: Daily Stage Watch
+
+on:
+  schedule:
+    # Tous les jours à 07:00 UTC (= 09:00 ou 10:00 heure Ukraine/France selon saison)
+    # PLACEHOLDER : ajuste l'heure si tu préfères recevoir les notifs à un autre moment.
+    # Format cron : minute heure jour mois jour-semaine
+    - cron: "0 7 * * *"
+  workflow_dispatch:
+    # Permet aussi de lancer le script manuellement depuis l'onglet "Actions" de GitHub,
+    # utile pour tester sans attendre le prochain run automatique.
+
+# Nécessaire pour que l'Action puisse commit le fichier d'état mis à jour
+permissions:
+  contents: write
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout du repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Installer les dépendances
+        run: pip install -r requirements.txt
+
+      - name: Lancer le script de veille
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          JOOBLE_API_KEY: ${{ secrets.JOOBLE_API_KEY }}
+        run: python main.py
+
+      - name: Commit et push de l'état mis à jour
+        run: |
+          git config --global user.name "stage-watcher-bot"
+          git config --global user.email "actions@github.com"
+          git add state/seen_offers.json
+          git diff --quiet --cached || git commit -m "Update seen offers [automated]"
+          git push

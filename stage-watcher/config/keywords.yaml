@@ -1,0 +1,61 @@
+# =============================================================================
+# FILTRAGE PAR MOTS-CLÉS — sans IA, string matching uniquement
+# =============================================================================
+# Chaque offre récupérée par les scrapers est testée sur ces règles :
+#   - Le TITRE ou la DESCRIPTION doit contenir au moins un mot de "include_any"
+#   - ET ne doit contenir AUCUN mot de "exclude_any"
+# La comparaison est insensible à la casse et aux accents ukrainiens gérés nativement.
+#
+# PLACEHOLDER — À AJUSTER PAR TOI :
+# Ces listes sont un point de départ basé sur nos échanges précédents (departments
+# ciblés : Credit analysis, FP&A, Corporate business, Restructuring, Problem assets,
+# Data analyst). Affine-les selon ce que tu observes dans les offres réelles au fil
+# des semaines — plus les mots-clés sont précis, moins tu reçois de bruit sur Telegram.
+# =============================================================================
+
+include_any:
+  # --- Termes génériques stage / étudiant (UA + EN + RU tel que vu sur les job boards) ---
+  - "стажування"
+  - "стажер"
+  - "стажировка"
+  - "стажёр"
+  - "internship"
+  - "intern"
+  - "для студентів"
+  - "студент"
+  - "graduate"
+  - "junior"
+  - "молодший"
+  - "trainee"
+
+  # --- PLACEHOLDER : termes liés à tes départements cibles ---
+  # Décommente / adapte selon les intitulés réels observés sur les offres
+  # - "credit analyst"
+  # - "кредитний аналітик"
+  # - "fp&a"
+  # - "financial planning"
+  # - "corporate business"
+  # - "restructuring"
+  # - "реструктуризації"
+  # - "problem assets"
+  # - "проблемних активів"
+  # - "data analyst"
+  # - "аналітик даних"
+
+exclude_any:
+  # --- Niveaux séniors à exclure automatiquement (cf. ta consigne : pas de MD/VP) ---
+  - "senior"
+  - "lead"
+  - "head of"
+  - "director"
+  - "директор"
+  - "керівник"
+  - "начальник"
+  - "vice president"
+  - "managing director"
+  - "partner"
+  - "chief"
+
+# Si cette liste est vide (include_any: []), le script notifie TOUTES les offres
+# détectées sans filtrage — utile en phase de test pour vérifier que les scrapers
+# fonctionnent avant d'affiner les mots-clés.

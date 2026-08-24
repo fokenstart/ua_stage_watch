@@ -1,0 +1,8 @@
+requests==2.32.3
+beautifulsoup4==4.12.3
+feedparser==6.0.11
+PyYAML==6.0.2
+
+# Décommente la ligne suivante UNIQUEMENT si tu actives le scraper
+# Playwright pour les sites JS lourds (voir scrapers/html_js_playwright.py)
+# playwright==1.47.0
