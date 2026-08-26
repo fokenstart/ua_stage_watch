@@ -1,0 +1,7 @@
+# Sources à interroger. Ajouter une plateforme = une entrée + un scraper enregistré.
+sources:
+  - type: robota
+    label: robota.ua
+    keywords: стажування
+    rubrics: [18, 14]
+    url: "https://robota.ua/zapros/stazhuvannya/ukraine/params;rubrics=18,14"

@@ -1,114 +1,51 @@
-"""
-Point d'entrée principal — orchestre tout le pipeline :
+"""Scrape les sources configurées et met à jour data/jobs.json.
 
-  1. Charge la config (companies.yaml)
-  2. Pour chaque entreprise x chaque source : appelle le scraper concerné
-  3. Filtre les offres par mots-clés (keyword_filter.py)
-  4. Compare aux offres déjà notifiées (state.py)
-  5. Envoie une notif Telegram pour chaque NOUVELLE offre (notifier.py)
-  6. Sauvegarde le nouvel état
-
-Exécuté automatiquement chaque jour par GitHub Actions
-(.github/workflows/daily_watch.yml), mais peut aussi tourner en local :
-
-    pip install -r requirements.txt
     python main.py
-
-Sans TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID, le run va jusqu’au bout
-et imprime dans le terminal les messages qui auraient été envoyés.
 """
 
 import os
 import time
+
 import yaml
 
 from scrapers.registry import get_scraper
-from keyword_filter import title_matches
-from state import load_seen_ids, save_seen_ids, make_job_id
-from notifier import send_batch
+from store import stats, upsert_jobs
 
-CONFIG_PATH = os.path.join(os.path.dirname(__file__), "config", "companies.yaml")
-
-# Pause entre deux requêtes HTTP pour rester poli envers les serveurs cibles
-# et limiter le risque de blocage IP. Ajustable si besoin.
-DELAY_BETWEEN_REQUESTS_SECONDS = 2
+CONFIG_PATH = os.path.join(os.path.dirname(__file__), "config", "sources.yaml")
+DELAY_SECONDS = 1
 
 
 def load_config() -> dict:
-    with open(CONFIG_PATH, "r", encoding="utf-8") as f:
-        return yaml.safe_load(f)
+    with open(CONFIG_PATH, "r", encoding="utf-8") as fh:
+        return yaml.safe_load(fh) or {}
 
 
-def run() -> None:
+def run_scrape() -> dict:
     config = load_config()
-    companies = config.get("companies") or []
-    include_kw = config.get("keywords_include") or []
-    exclude_kw = config.get("keywords_exclude") or []
+    sources = config.get("sources") or []
+    print(f"[main] scrape — {len(sources)} source(s)")
 
-    seen_ids = load_seen_ids()
-    updated_ids = set(seen_ids)  # copie qu'on va enrichir au fil du run
-    new_jobs_to_notify = []
+    for source in sources:
+        source_type = source.get("type")
+        scraper = get_scraper(source_type)
+        if scraper is None:
+            continue
+        try:
+            jobs = scraper.fetch(source)
+        except Exception as exc:
+            print(f"[main] erreur {source_type}: {exc}")
+            jobs = []
+        print(f"[main] {source.get('label', source_type)}: {len(jobs)} offre(s)")
+        upsert_jobs(jobs, source_type)
+        time.sleep(DELAY_SECONDS)
 
-    total_sources = sum(len(c.get("sources", [])) for c in companies)
-    print(f"[main] Démarrage du run — {len(companies)} entreprise(s), "
-          f"{total_sources} source(s) à interroger.")
-
-    for company in companies:
-        company_name = company.get("name", "INCONNU")
-
-        for source in company.get("sources", []):
-            source_type = source.get("type")
-            source_label = source.get("label", source_type)
-
-            scraper = get_scraper(source_type)
-            if scraper is None:
-                continue
-
-            print(f"[main] -> {company_name} / {source_label} ...")
-
-            try:
-                jobs = scraper.fetch(source)
-            except Exception as e:
-                # Filet de sécurité ultime : un scraper qui plante ne doit
-                # jamais interrompre le run entier pour les autres sources.
-                print(f"[main] ERREUR inattendue sur {company_name}/{source_label}: {e}")
-                jobs = []
-
-            print(f"[main]    {len(jobs)} offre(s) brute(s) trouvée(s).")
-
-            for job in jobs:
-                title = (job.get("title") or "").strip()
-                native_id = job.get("native_id")
-                job_url = job.get("url")
-
-                if not native_id or not job_url:
-                    continue
-
-                if not title_matches(title, include_kw, exclude_kw):
-                    continue  # ne correspond pas aux mots-clés de veille stage/junior
-
-                job_id = make_job_id(company_name, source_type, native_id)
-
-                if job_id in seen_ids:
-                    continue  # déjà notifié lors d'un run précédent
-
-                updated_ids.add(job_id)
-                new_jobs_to_notify.append({
-                    "company": company_name,
-                    "source_label": source_label,
-                    "title": title,
-                    "url": job_url,
-                })
-
-            time.sleep(DELAY_BETWEEN_REQUESTS_SECONDS)
-
-    print(f"[main] {len(new_jobs_to_notify)} nouvelle(s) offre(s) pertinente(s) détectée(s).")
-
-    send_batch(new_jobs_to_notify)
-    save_seen_ids(updated_ids)
-
-    print("[main] Run terminé.")
+    summary = stats()
+    print(
+        f"[main] terminé — total={summary['total']} "
+        f"pending={summary['pending']} last={summary['last_scrape']}"
+    )
+    return summary
 
 
 if __name__ == "__main__":
-    run()
+    run_scrape()

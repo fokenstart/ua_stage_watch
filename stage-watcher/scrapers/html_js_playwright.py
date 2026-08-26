@@ -14,7 +14,7 @@ rapide tant que ce n'est pas nécessaire.
 
 MARCHE À SUIVRE POUR ACTIVER (quand tu es prêt) :
   1. Décommente la ligne d'installation Playwright dans
-     .github/workflows/daily_watch.yml (étape Playwright à ajouter si besoin)
+     .github/workflows/daily_scrape.yml (elle est déjà présente en
      commentaire, cherche "PLACEHOLDER: activer Playwright").
   2. Pour chaque site (Deloitte/PwC/EY), ouvre-le dans Chrome, DevTools
      (F12) > Network > XHR, recharge la page, et cherche si une requête
@@ -60,9 +60,6 @@ class HtmlJsPlaywrightScraper(BaseScraper):
 
         wait_selector = selectors.get("wait_selector", "body")
         job_link_selector = selectors.get("job_link")
-        if not job_link_selector:
-            print(f"[html_js] 'selectors.job_link' manquant pour {url}")
-            return []
 
         jobs = []
         try:
