@@ -1,6 +1,6 @@
 {
   "baseline_done": true,
-  "last_scrape": "2026-08-31T02:15:23.400607+00:00",
+  "last_scrape": "2026-08-31T12:06:57.731725+00:00",
   "jobs": {
     "robota::11115817": {
       "id": "robota::11115817",
@@ -320,6 +320,17 @@
       "first_seen": "2026-08-26T17:50:45.729283+00:00",
       "is_new": false,
       "delivered": true
+    },
+    "robota::11324043": {
+      "id": "robota::11324043",
+      "native_id": "11324043",
+      "title": "Інтерн з автоматизації та аналізу даних | Digital Audit",
+      "url": "https://robota.ua/company1029/vacancy11324043",
+      "platform": "robota.ua",
+      "source_type": "robota",
+      "first_seen": "2026-08-31T12:06:57.731697+00:00",
+      "is_new": true,
+      "delivered": false
     }
   }
 }
