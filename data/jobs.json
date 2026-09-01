@@ -1,6 +1,6 @@
 {
   "baseline_done": true,
-  "last_scrape": "2026-09-01T10:44:32.650166+00:00",
+  "last_scrape": "2026-09-01T15:44:35.521216+00:00",
   "jobs": {
     "robota::11115817": {
       "id": "robota::11115817",
@@ -329,6 +329,17 @@
       "platform": "robota.ua",
       "source_type": "robota",
       "first_seen": "2026-08-31T12:06:57.731697+00:00",
+      "is_new": true,
+      "delivered": false
+    },
+    "robota::11325466": {
+      "id": "robota::11325466",
+      "native_id": "11325466",
+      "title": "Стажування в департаменті аудиту",
+      "url": "https://robota.ua/company1062358/vacancy11325466",
+      "platform": "robota.ua",
+      "source_type": "robota",
+      "first_seen": "2026-09-01T15:44:35.521192+00:00",
       "is_new": true,
       "delivered": false
     }
