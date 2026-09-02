@@ -1,6 +1,6 @@
 {
   "baseline_done": true,
-  "last_scrape": "2026-09-02T10:09:51.853945+00:00",
+  "last_scrape": "2026-09-02T15:34:59.513283+00:00",
   "jobs": {
     "robota::11115817": {
       "id": "robota::11115817",
@@ -340,6 +340,61 @@
       "platform": "robota.ua",
       "source_type": "robota",
       "first_seen": "2026-09-01T15:44:35.521192+00:00",
+      "is_new": true,
+      "delivered": false
+    },
+    "robota::11259632": {
+      "id": "robota::11259632",
+      "native_id": "11259632",
+      "title": "Консультант фінансовий (стажер)",
+      "url": "https://robota.ua/company569821/vacancy11259632",
+      "platform": "robota.ua",
+      "source_type": "robota",
+      "first_seen": "2026-09-02T15:34:59.513237+00:00",
+      "is_new": true,
+      "delivered": false
+    },
+    "robota::10869345": {
+      "id": "robota::10869345",
+      "native_id": "10869345",
+      "title": "Фінансовий консультант (стажер)",
+      "url": "https://robota.ua/company569821/vacancy10869345",
+      "platform": "robota.ua",
+      "source_type": "robota",
+      "first_seen": "2026-09-02T15:34:59.513258+00:00",
+      "is_new": true,
+      "delivered": false
+    },
+    "robota::11183431": {
+      "id": "robota::11183431",
+      "native_id": "11183431",
+      "title": "Касир відділення банку (стажер)",
+      "url": "https://robota.ua/company569821/vacancy11183431",
+      "platform": "robota.ua",
+      "source_type": "robota",
+      "first_seen": "2026-09-02T15:34:59.513261+00:00",
+      "is_new": true,
+      "delivered": false
+    },
+    "robota::11209930": {
+      "id": "robota::11209930",
+      "native_id": "11209930",
+      "title": "Corporate Business Intern",
+      "url": "https://robota.ua/company569821/vacancy11209930",
+      "platform": "robota.ua",
+      "source_type": "robota",
+      "first_seen": "2026-09-02T15:34:59.513263+00:00",
+      "is_new": true,
+      "delivered": false
+    },
+    "robota::10741871": {
+      "id": "robota::10741871",
+      "native_id": "10741871",
+      "title": "Молодший аналітик з продажу (стажер)",
+      "url": "https://robota.ua/company828062/vacancy10741871",
+      "platform": "robota.ua",
+      "source_type": "robota",
+      "first_seen": "2026-09-02T15:34:59.513276+00:00",
       "is_new": true,
       "delivered": false
     }
