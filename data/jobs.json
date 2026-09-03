@@ -1,6 +1,6 @@
 {
   "baseline_done": true,
-  "last_scrape": "2026-09-03T10:21:21.027948+00:00",
+  "last_scrape": "2026-09-03T15:27:09.537755+00:00",
   "jobs": {
     "robota::11115817": {
       "id": "robota::11115817",
@@ -395,6 +395,39 @@
       "platform": "robota.ua",
       "source_type": "robota",
       "first_seen": "2026-09-02T15:34:59.513276+00:00",
+      "is_new": true,
+      "delivered": false
+    },
+    "robota::11329058": {
+      "id": "robota::11329058",
+      "native_id": "11329058",
+      "title": "Стажер департаменту з управління кредитним ризиком (Intern of Credit Risk Management Department)",
+      "url": "https://robota.ua/company958/vacancy11329058",
+      "platform": "robota.ua",
+      "source_type": "robota",
+      "first_seen": "2026-09-03T15:27:09.537701+00:00",
+      "is_new": true,
+      "delivered": false
+    },
+    "robota::11329469": {
+      "id": "robota::11329469",
+      "native_id": "11329469",
+      "title": "Trainee for the reskill program for SAP SD (Sales and Distribution)",
+      "url": "https://robota.ua/company3011513/vacancy11329469",
+      "platform": "robota.ua",
+      "source_type": "robota",
+      "first_seen": "2026-09-03T15:27:09.537741+00:00",
+      "is_new": true,
+      "delivered": false
+    },
+    "robota::11329468": {
+      "id": "robota::11329468",
+      "native_id": "11329468",
+      "title": "Trainee for the Reskill Program SAP MM (Materials Management)",
+      "url": "https://robota.ua/company3011513/vacancy11329468",
+      "platform": "robota.ua",
+      "source_type": "robota",
+      "first_seen": "2026-09-03T15:27:09.537745+00:00",
       "is_new": true,
       "delivered": false
     }
