@@ -1,6 +1,6 @@
 {
   "baseline_done": true,
-  "last_scrape": "2026-09-04T01:55:58.742692+00:00",
+  "last_scrape": "2026-09-04T10:08:39.624038+00:00",
   "jobs": {
     "robota::11115817": {
       "id": "robota::11115817",
@@ -428,6 +428,17 @@
       "platform": "robota.ua",
       "source_type": "robota",
       "first_seen": "2026-09-03T15:27:09.537745+00:00",
+      "is_new": true,
+      "delivered": false
+    },
+    "robota::9779210": {
+      "id": "robota::9779210",
+      "native_id": "9779210",
+      "title": "Інтерн в міжнародну аудиторську компанію",
+      "url": "https://robota.ua/company262103/vacancy9779210",
+      "platform": "robota.ua",
+      "source_type": "robota",
+      "first_seen": "2026-09-04T10:08:39.624012+00:00",
       "is_new": true,
       "delivered": false
     }
