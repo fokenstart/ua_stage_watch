@@ -1,6 +1,6 @@
 {
   "baseline_done": true,
-  "last_scrape": "2026-09-09T10:21:24.496852+00:00",
+  "last_scrape": "2026-09-09T15:32:00.745872+00:00",
   "jobs": {
     "robota::11115817": {
       "id": "robota::11115817",
@@ -450,6 +450,17 @@
       "platform": "robota.ua",
       "source_type": "robota",
       "first_seen": "2026-09-09T10:21:24.496810+00:00",
+      "is_new": true,
+      "delivered": false
+    },
+    "robota::10741084": {
+      "id": "robota::10741084",
+      "native_id": "10741084",
+      "title": "Менеджер з продажу",
+      "url": "https://robota.ua/company583287/vacancy10741084",
+      "platform": "robota.ua",
+      "source_type": "robota",
+      "first_seen": "2026-09-09T15:32:00.745838+00:00",
       "is_new": true,
       "delivered": false
     }
