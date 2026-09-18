@@ -1,6 +1,6 @@
 {
   "baseline_done": true,
-  "last_scrape": "2026-09-18T15:25:04.953647+00:00",
+  "last_scrape": "2026-09-18T20:07:54.611819+00:00",
   "jobs": {
     "robota::11115817": {
       "id": "robota::11115817",
@@ -170,7 +170,7 @@
     "robota::11287100": {
       "id": "robota::11287100",
       "native_id": "11287100",
-      "title": "Стажер відділу продажів (Graduate Development Program)",
+      "title": "Стажер відділу продажів (Graduate Development Program), D.TRADING",
       "url": "https://robota.ua/company958/vacancy11287100",
       "platform": "robota.ua",
       "source_type": "robota",
