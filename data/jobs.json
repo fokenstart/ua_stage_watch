@@ -1,6 +1,6 @@
 {
   "baseline_done": true,
-  "last_scrape": "2026-09-21T11:23:44.178792+00:00",
+  "last_scrape": "2026-09-21T17:23:19.327151+00:00",
   "jobs": {
     "robota::11115817": {
       "id": "robota::11115817",
@@ -494,6 +494,17 @@
       "platform": "robota.ua",
       "source_type": "robota",
       "first_seen": "2026-09-16T15:44:46.346841+00:00",
+      "is_new": true,
+      "delivered": false
+    },
+    "robota::11349090": {
+      "id": "robota::11349090",
+      "native_id": "11349090",
+      "title": "Data Analyst traine junior",
+      "url": "https://robota.ua/company16128832/vacancy11349090",
+      "platform": "robota.ua",
+      "source_type": "robota",
+      "first_seen": "2026-09-21T17:23:19.327129+00:00",
       "is_new": true,
       "delivered": false
     }
