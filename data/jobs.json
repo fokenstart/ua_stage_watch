@@ -1,6 +1,6 @@
 {
   "baseline_done": true,
-  "last_scrape": "2026-09-22T02:21:19.499931+00:00",
+  "last_scrape": "2026-09-22T10:33:00.281118+00:00",
   "jobs": {
     "robota::11115817": {
       "id": "robota::11115817",
@@ -505,6 +505,17 @@
       "platform": "robota.ua",
       "source_type": "robota",
       "first_seen": "2026-09-21T17:23:19.327129+00:00",
+      "is_new": true,
+      "delivered": false
+    },
+    "robota::11350042": {
+      "id": "robota::11350042",
+      "native_id": "11350042",
+      "title": "Transfer Pricing Intern",
+      "url": "https://robota.ua/company1062358/vacancy11350042",
+      "platform": "robota.ua",
+      "source_type": "robota",
+      "first_seen": "2026-09-22T10:33:00.281092+00:00",
       "is_new": true,
       "delivered": false
     }
