@@ -1,6 +1,6 @@
 {
   "baseline_done": true,
-  "last_scrape": "2026-09-25T16:06:51.157476+00:00",
+  "last_scrape": "2026-09-25T20:51:17.983673+00:00",
   "jobs": {
     "robota::11115817": {
       "id": "robota::11115817",
@@ -538,6 +538,17 @@
       "platform": "robota.ua",
       "source_type": "robota",
       "first_seen": "2026-09-25T16:06:51.157464+00:00",
+      "is_new": true,
+      "delivered": false
+    },
+    "robota::11355292": {
+      "id": "robota::11355292",
+      "native_id": "11355292",
+      "title": "Аудитор (інтерн)",
+      "url": "https://robota.ua/company203681/vacancy11355292",
+      "platform": "robota.ua",
+      "source_type": "robota",
+      "first_seen": "2026-09-25T20:51:17.983628+00:00",
       "is_new": true,
       "delivered": false
     }
