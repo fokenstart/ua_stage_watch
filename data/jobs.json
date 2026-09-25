@@ -1,6 +1,6 @@
 {
   "baseline_done": true,
-  "last_scrape": "2026-09-25T10:47:15.582989+00:00",
+  "last_scrape": "2026-09-25T16:06:51.157476+00:00",
   "jobs": {
     "robota::11115817": {
       "id": "robota::11115817",
@@ -516,6 +516,28 @@
       "platform": "robota.ua",
       "source_type": "robota",
       "first_seen": "2026-09-22T10:33:00.281092+00:00",
+      "is_new": true,
+      "delivered": false
+    },
+    "robota::11355139": {
+      "id": "robota::11355139",
+      "native_id": "11355139",
+      "title": "Менеджер з еквайрингу регіону",
+      "url": "https://robota.ua/company234100/vacancy11355139",
+      "platform": "robota.ua",
+      "source_type": "robota",
+      "first_seen": "2026-09-25T16:06:51.157431+00:00",
+      "is_new": true,
+      "delivered": false
+    },
+    "robota::11325603": {
+      "id": "robota::11325603",
+      "native_id": "11325603",
+      "title": "Помічник аналітика",
+      "url": "https://robota.ua/company2264296/vacancy11325603",
+      "platform": "robota.ua",
+      "source_type": "robota",
+      "first_seen": "2026-09-25T16:06:51.157464+00:00",
       "is_new": true,
       "delivered": false
     }
