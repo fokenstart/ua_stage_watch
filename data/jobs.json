@@ -1,6 +1,6 @@
 {
   "baseline_done": true,
-  "last_scrape": "2026-09-28T12:19:21.230203+00:00",
+  "last_scrape": "2026-09-28T22:44:26.898111+00:00",
   "jobs": {
     "robota::11115817": {
       "id": "robota::11115817",
@@ -560,6 +560,17 @@
       "platform": "robota.ua",
       "source_type": "robota",
       "first_seen": "2026-09-26T10:29:19.828798+00:00",
+      "is_new": true,
+      "delivered": false
+    },
+    "robota::11357085": {
+      "id": "robota::11357085",
+      "native_id": "11357085",
+      "title": "Оператор з продажу з польською мовою — віддалено",
+      "url": "https://robota.ua/company16879862/vacancy11357085",
+      "platform": "robota.ua",
+      "source_type": "robota",
+      "first_seen": "2026-09-28T22:44:26.898072+00:00",
       "is_new": true,
       "delivered": false
     }
