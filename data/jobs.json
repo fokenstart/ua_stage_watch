@@ -1,6 +1,6 @@
 {
   "baseline_done": true,
-  "last_scrape": "2026-10-02T11:33:20.909951+00:00",
+  "last_scrape": "2026-10-02T17:00:48.606731+00:00",
   "jobs": {
     "robota::11115817": {
       "id": "robota::11115817",
@@ -571,6 +571,17 @@
       "platform": "robota.ua",
       "source_type": "robota",
       "first_seen": "2026-09-28T22:44:26.898072+00:00",
+      "is_new": true,
+      "delivered": false
+    },
+    "robota::11362578": {
+      "id": "robota::11362578",
+      "native_id": "11362578",
+      "title": "Data Quality Intern",
+      "url": "https://robota.ua/company16234928/vacancy11362578",
+      "platform": "robota.ua",
+      "source_type": "robota",
+      "first_seen": "2026-10-02T17:00:48.606704+00:00",
       "is_new": true,
       "delivered": false
     }
