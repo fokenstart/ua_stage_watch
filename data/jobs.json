@@ -1,6 +1,6 @@
 {
   "baseline_done": true,
-  "last_scrape": "2026-10-06T12:24:06.771503+00:00",
+  "last_scrape": "2026-10-06T21:59:50.691643+00:00",
   "jobs": {
     "robota::11115817": {
       "id": "robota::11115817",
@@ -582,6 +582,17 @@
       "platform": "robota.ua",
       "source_type": "robota",
       "first_seen": "2026-10-02T17:00:48.606704+00:00",
+      "is_new": true,
+      "delivered": false
+    },
+    "robota::11298351": {
+      "id": "robota::11298351",
+      "native_id": "11298351",
+      "title": "Sales Intern (Commerce)",
+      "url": "https://robota.ua/company258696/vacancy11298351",
+      "platform": "robota.ua",
+      "source_type": "robota",
+      "first_seen": "2026-10-06T21:59:50.691618+00:00",
       "is_new": true,
       "delivered": false
     }
