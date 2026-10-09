@@ -1,6 +1,6 @@
 {
   "baseline_done": true,
-  "last_scrape": "2026-10-09T03:35:53.024551+00:00",
+  "last_scrape": "2026-10-09T12:15:44.201184+00:00",
   "jobs": {
     "robota::11115817": {
       "id": "robota::11115817",
@@ -626,6 +626,17 @@
       "platform": "robota.ua",
       "source_type": "robota",
       "first_seen": "2026-10-08T22:38:20.271949+00:00",
+      "is_new": true,
+      "delivered": false
+    },
+    "robota::11370226": {
+      "id": "robota::11370226",
+      "native_id": "11370226",
+      "title": "Information Management Specialist / Молодший аналітик консолідованої інформації",
+      "url": "https://robota.ua/company12788479/vacancy11370226",
+      "platform": "robota.ua",
+      "source_type": "robota",
+      "first_seen": "2026-10-09T12:15:44.201159+00:00",
       "is_new": true,
       "delivered": false
     }
