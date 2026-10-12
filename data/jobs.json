@@ -1,6 +1,6 @@
 {
   "baseline_done": true,
-  "last_scrape": "2026-10-12T03:13:02.982008+00:00",
+  "last_scrape": "2026-10-12T13:50:55.070464+00:00",
   "jobs": {
     "robota::11115817": {
       "id": "robota::11115817",
@@ -511,7 +511,7 @@
     "robota::11350042": {
       "id": "robota::11350042",
       "native_id": "11350042",
-      "title": "Transfer Pricing Intern",
+      "title": "Стажування в департаменті аудиту",
       "url": "https://robota.ua/company1062358/vacancy11350042",
       "platform": "robota.ua",
       "source_type": "robota",
@@ -637,6 +637,28 @@
       "platform": "robota.ua",
       "source_type": "robota",
       "first_seen": "2026-10-09T12:15:44.201159+00:00",
+      "is_new": true,
+      "delivered": false
+    },
+    "robota::11204572": {
+      "id": "robota::11204572",
+      "native_id": "11204572",
+      "title": "Трейдер-стажер нового покоління | Без досвіду | Навчання + капітал компанії",
+      "url": "https://robota.ua/company14624998/vacancy11204572",
+      "platform": "robota.ua",
+      "source_type": "robota",
+      "first_seen": "2026-10-12T13:50:55.070413+00:00",
+      "is_new": true,
+      "delivered": false
+    },
+    "robota::10455738": {
+      "id": "robota::10455738",
+      "native_id": "10455738",
+      "title": "Трейдер (стажер)",
+      "url": "https://robota.ua/company14624998/vacancy10455738",
+      "platform": "robota.ua",
+      "source_type": "robota",
+      "first_seen": "2026-10-12T13:50:55.070435+00:00",
       "is_new": true,
       "delivered": false
     }
