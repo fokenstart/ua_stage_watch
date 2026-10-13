@@ -1,6 +1,6 @@
 {
   "baseline_done": true,
-  "last_scrape": "2026-10-13T04:50:16.541565+00:00",
+  "last_scrape": "2026-10-13T13:08:50.751565+00:00",
   "jobs": {
     "robota::11115817": {
       "id": "robota::11115817",
@@ -659,6 +659,17 @@
       "platform": "robota.ua",
       "source_type": "robota",
       "first_seen": "2026-10-12T13:50:55.070435+00:00",
+      "is_new": true,
+      "delivered": false
+    },
+    "robota::11374033": {
+      "id": "robota::11374033",
+      "native_id": "11374033",
+      "title": "Менеджер по роботі з клієнтами(віддалено)",
+      "url": "https://robota.ua/company2335087/vacancy11374033",
+      "platform": "robota.ua",
+      "source_type": "robota",
+      "first_seen": "2026-10-13T13:08:50.751519+00:00",
       "is_new": true,
       "delivered": false
     }
