@@ -1,6 +1,6 @@
 {
   "baseline_done": true,
-  "last_scrape": "2026-10-19T02:20:24.923239+00:00",
+  "last_scrape": "2026-10-19T11:31:37.153040+00:00",
   "jobs": {
     "robota::11115817": {
       "id": "robota::11115817",
@@ -670,6 +670,61 @@
       "platform": "robota.ua",
       "source_type": "robota",
       "first_seen": "2026-10-13T13:08:50.751519+00:00",
+      "is_new": true,
+      "delivered": false
+    },
+    "robota::11370501": {
+      "id": "robota::11370501",
+      "native_id": "11370501",
+      "title": "Менеджер з продажу банківських продуктів",
+      "url": "https://robota.ua/company7161320/vacancy11370501",
+      "platform": "robota.ua",
+      "source_type": "robota",
+      "first_seen": "2026-10-19T11:31:37.152995+00:00",
+      "is_new": true,
+      "delivered": false
+    },
+    "robota::11370502": {
+      "id": "robota::11370502",
+      "native_id": "11370502",
+      "title": "Менеджер з продажу банківських продуктів",
+      "url": "https://robota.ua/company7161320/vacancy11370502",
+      "platform": "robota.ua",
+      "source_type": "robota",
+      "first_seen": "2026-10-19T11:31:37.153015+00:00",
+      "is_new": true,
+      "delivered": false
+    },
+    "robota::11370503": {
+      "id": "robota::11370503",
+      "native_id": "11370503",
+      "title": "Менеджер з продажу банківських продуктів",
+      "url": "https://robota.ua/company7161320/vacancy11370503",
+      "platform": "robota.ua",
+      "source_type": "robota",
+      "first_seen": "2026-10-19T11:31:37.153018+00:00",
+      "is_new": true,
+      "delivered": false
+    },
+    "robota::11370504": {
+      "id": "robota::11370504",
+      "native_id": "11370504",
+      "title": "Менеджер з продажу банківських продуктів",
+      "url": "https://robota.ua/company7161320/vacancy11370504",
+      "platform": "robota.ua",
+      "source_type": "robota",
+      "first_seen": "2026-10-19T11:31:37.153021+00:00",
+      "is_new": true,
+      "delivered": false
+    },
+    "robota::11370500": {
+      "id": "robota::11370500",
+      "native_id": "11370500",
+      "title": "Менеджер з продажу банківських продуктів",
+      "url": "https://robota.ua/company7161320/vacancy11370500",
+      "platform": "robota.ua",
+      "source_type": "robota",
+      "first_seen": "2026-10-19T11:31:37.153023+00:00",
       "is_new": true,
       "delivered": false
     }
