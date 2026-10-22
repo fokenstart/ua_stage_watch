@@ -1,6 +1,6 @@
 {
   "baseline_done": true,
-  "last_scrape": "2026-10-22T10:49:22.684659+00:00",
+  "last_scrape": "2026-10-22T16:15:56.465727+00:00",
   "jobs": {
     "robota::11115817": {
       "id": "robota::11115817",
@@ -725,6 +725,28 @@
       "platform": "robota.ua",
       "source_type": "robota",
       "first_seen": "2026-10-19T11:31:37.153023+00:00",
+      "is_new": true,
+      "delivered": false
+    },
+    "robota::11385027": {
+      "id": "robota::11385027",
+      "native_id": "11385027",
+      "title": "Молодший фахівець/фахівчиня групи сценарної оцінки та моделювання",
+      "url": "https://robota.ua/company/vacancy11385027",
+      "platform": "robota.ua",
+      "source_type": "robota",
+      "first_seen": "2026-10-22T16:15:56.465679+00:00",
+      "is_new": true,
+      "delivered": false
+    },
+    "robota::11357241": {
+      "id": "robota::11357241",
+      "native_id": "11357241",
+      "title": "Менеджер з еквайрингу регіону",
+      "url": "https://robota.ua/company234100/vacancy11357241",
+      "platform": "robota.ua",
+      "source_type": "robota",
+      "first_seen": "2026-10-22T16:15:56.465706+00:00",
       "is_new": true,
       "delivered": false
     }
