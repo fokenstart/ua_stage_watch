@@ -1,6 +1,6 @@
 {
   "baseline_done": true,
-  "last_scrape": "2026-10-23T10:41:20.533217+00:00",
+  "last_scrape": "2026-10-23T16:05:48.127650+00:00",
   "jobs": {
     "robota::11115817": {
       "id": "robota::11115817",
@@ -747,6 +747,17 @@
       "platform": "robota.ua",
       "source_type": "robota",
       "first_seen": "2026-10-22T16:15:56.465706+00:00",
+      "is_new": true,
+      "delivered": false
+    },
+    "robota::11386725": {
+      "id": "robota::11386725",
+      "native_id": "11386725",
+      "title": "Помічник аналітика",
+      "url": "https://robota.ua/company13293800/vacancy11386725",
+      "platform": "robota.ua",
+      "source_type": "robota",
+      "first_seen": "2026-10-23T16:05:48.127626+00:00",
       "is_new": true,
       "delivered": false
     }
