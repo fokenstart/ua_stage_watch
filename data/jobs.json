@@ -1,6 +1,6 @@
 {
   "baseline_done": true,
-  "last_scrape": "2026-10-26T02:14:45.265010+00:00",
+  "last_scrape": "2026-10-26T11:50:10.203357+00:00",
   "jobs": {
     "robota::11115817": {
       "id": "robota::11115817",
@@ -732,7 +732,7 @@
       "id": "robota::11385027",
       "native_id": "11385027",
       "title": "Молодший фахівець/фахівчиня групи сценарної оцінки та моделювання",
-      "url": "https://robota.ua/company/vacancy11385027",
+      "url": "https://robota.ua/company2263870/vacancy11385027",
       "platform": "robota.ua",
       "source_type": "robota",
       "first_seen": "2026-10-22T16:15:56.465679+00:00",
@@ -758,6 +758,17 @@
       "platform": "robota.ua",
       "source_type": "robota",
       "first_seen": "2026-10-23T16:05:48.127626+00:00",
+      "is_new": true,
+      "delivered": false
+    },
+    "robota::11375599": {
+      "id": "robota::11375599",
+      "native_id": "11375599",
+      "title": "Intern Data Operations (IT)",
+      "url": "https://robota.ua/company324310/vacancy11375599",
+      "platform": "robota.ua",
+      "source_type": "robota",
+      "first_seen": "2026-10-26T11:50:10.203335+00:00",
       "is_new": true,
       "delivered": false
     }
