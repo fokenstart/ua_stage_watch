@@ -1,6 +1,6 @@
 {
   "baseline_done": true,
-  "last_scrape": "2026-10-28T11:49:02.769927+00:00",
+  "last_scrape": "2026-10-28T17:36:55.410717+00:00",
   "jobs": {
     "robota::11115817": {
       "id": "robota::11115817",
@@ -780,6 +780,17 @@
       "platform": "robota.ua",
       "source_type": "robota",
       "first_seen": "2026-10-27T11:14:43.047495+00:00",
+      "is_new": true,
+      "delivered": false
+    },
+    "robota::11391642": {
+      "id": "robota::11391642",
+      "native_id": "11391642",
+      "title": "Молодший фахівець з HR-консалтингу",
+      "url": "https://robota.ua/company1029/vacancy11391642",
+      "platform": "robota.ua",
+      "source_type": "robota",
+      "first_seen": "2026-10-28T17:36:55.410692+00:00",
       "is_new": true,
       "delivered": false
     }
