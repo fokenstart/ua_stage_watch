@@ -1,6 +1,6 @@
 {
   "baseline_done": true,
-  "last_scrape": "2026-10-28T17:36:55.410717+00:00",
+  "last_scrape": "2026-10-28T21:59:21.062894+00:00",
   "jobs": {
     "robota::11115817": {
       "id": "robota::11115817",
@@ -791,6 +791,28 @@
       "platform": "robota.ua",
       "source_type": "robota",
       "first_seen": "2026-10-28T17:36:55.410692+00:00",
+      "is_new": true,
+      "delivered": false
+    },
+    "robota::11391831": {
+      "id": "robota::11391831",
+      "native_id": "11391831",
+      "title": "Trainee for the Reskill Program SAP MM (Materials Management)",
+      "url": "https://robota.ua/company3011513/vacancy11391831",
+      "platform": "robota.ua",
+      "source_type": "robota",
+      "first_seen": "2026-10-28T21:59:21.062863+00:00",
+      "is_new": true,
+      "delivered": false
+    },
+    "robota::11391829": {
+      "id": "robota::11391829",
+      "native_id": "11391829",
+      "title": "Trainee for the reskill program for SAP SD (Sales and Distribution)",
+      "url": "https://robota.ua/company3011513/vacancy11391829",
+      "platform": "robota.ua",
+      "source_type": "robota",
+      "first_seen": "2026-10-28T21:59:21.062884+00:00",
       "is_new": true,
       "delivered": false
     }
