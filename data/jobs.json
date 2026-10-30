@@ -1,6 +1,6 @@
 {
   "baseline_done": true,
-  "last_scrape": "2026-10-30T11:50:34.944834+00:00",
+  "last_scrape": "2026-10-30T17:26:17.389255+00:00",
   "jobs": {
     "robota::11115817": {
       "id": "robota::11115817",
@@ -824,6 +824,17 @@
       "platform": "robota.ua",
       "source_type": "robota",
       "first_seen": "2026-10-29T11:56:43.070715+00:00",
+      "is_new": true,
+      "delivered": false
+    },
+    "robota::11394546": {
+      "id": "robota::11394546",
+      "native_id": "11394546",
+      "title": "Трейдер - стажер",
+      "url": "https://robota.ua/company15331542/vacancy11394546",
+      "platform": "robota.ua",
+      "source_type": "robota",
+      "first_seen": "2026-10-30T17:26:17.389199+00:00",
       "is_new": true,
       "delivered": false
     }
