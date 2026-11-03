@@ -1,6 +1,6 @@
 {
   "baseline_done": true,
-  "last_scrape": "2026-11-03T00:11:03.978823+00:00",
+  "last_scrape": "2026-11-03T13:13:52.479681+00:00",
   "jobs": {
     "robota::11115817": {
       "id": "robota::11115817",
@@ -846,6 +846,17 @@
       "platform": "robota.ua",
       "source_type": "robota",
       "first_seen": "2026-11-02T14:09:23.596518+00:00",
+      "is_new": true,
+      "delivered": false
+    },
+    "robota::11394714": {
+      "id": "robota::11394714",
+      "native_id": "11394714",
+      "title": "Трейдер-стажер нового покоління | Без досвіду | Навчання + капітал компанії",
+      "url": "https://robota.ua/company15331542/vacancy11394714",
+      "platform": "robota.ua",
+      "source_type": "robota",
+      "first_seen": "2026-11-03T13:13:52.479639+00:00",
       "is_new": true,
       "delivered": false
     }
