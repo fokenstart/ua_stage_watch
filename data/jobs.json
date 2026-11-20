@@ -1,6 +1,6 @@
 {
   "baseline_done": true,
-  "last_scrape": "2026-11-20T00:00:01.864606+00:00",
+  "last_scrape": "2026-11-20T06:18:09.895390+00:00",
   "jobs": {
     "robota::11115817": {
       "id": "robota::11115817",
@@ -890,6 +890,17 @@
       "platform": "robota.ua",
       "source_type": "robota",
       "first_seen": "2026-11-18T14:46:15.830418+00:00",
+      "is_new": true,
+      "delivered": false
+    },
+    "robota::11415668": {
+      "id": "robota::11415668",
+      "native_id": "11415668",
+      "title": "Trainee Data Analyst (стажер)",
+      "url": "https://robota.ua/company16207896/vacancy11415668",
+      "platform": "robota.ua",
+      "source_type": "robota",
+      "first_seen": "2026-11-20T06:18:09.895363+00:00",
       "is_new": true,
       "delivered": false
     }
