@@ -1,6 +1,6 @@
 {
   "baseline_done": true,
-  "last_scrape": "2026-11-23T04:41:34.639508+00:00",
+  "last_scrape": "2026-11-23T16:48:24.201585+00:00",
   "jobs": {
     "robota::11115817": {
       "id": "robota::11115817",
@@ -912,6 +912,17 @@
       "platform": "robota.ua",
       "source_type": "robota",
       "first_seen": "2026-11-21T04:44:25.764750+00:00",
+      "is_new": true,
+      "delivered": false
+    },
+    "robota::11418064": {
+      "id": "robota::11418064",
+      "native_id": "11418064",
+      "title": "Стажер у відділ ризик-менеджменту (фінансові ризики)",
+      "url": "https://robota.ua/company763/vacancy11418064",
+      "platform": "robota.ua",
+      "source_type": "robota",
+      "first_seen": "2026-11-23T16:48:24.201546+00:00",
       "is_new": true,
       "delivered": false
     }
