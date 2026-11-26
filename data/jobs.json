@@ -1,6 +1,6 @@
 {
   "baseline_done": true,
-  "last_scrape": "2026-11-25T16:25:34.418326+00:00",
+  "last_scrape": "2026-11-26T01:17:57.222953+00:00",
   "jobs": {
     "robota::11115817": {
       "id": "robota::11115817",
@@ -923,6 +923,17 @@
       "platform": "robota.ua",
       "source_type": "robota",
       "first_seen": "2026-11-23T16:48:24.201546+00:00",
+      "is_new": true,
+      "delivered": false
+    },
+    "robota::11421948": {
+      "id": "robota::11421948",
+      "native_id": "11421948",
+      "title": "Trainee for the reskill program for SAP FI (Financial Accounting)",
+      "url": "https://robota.ua/company3011513/vacancy11421948",
+      "platform": "robota.ua",
+      "source_type": "robota",
+      "first_seen": "2026-11-26T01:17:57.222933+00:00",
       "is_new": true,
       "delivered": false
     }
