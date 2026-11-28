@@ -1,6 +1,6 @@
 {
   "baseline_done": true,
-  "last_scrape": "2026-11-27T15:48:09.698267+00:00",
+  "last_scrape": "2026-11-28T00:49:38.503194+00:00",
   "jobs": {
     "robota::11115817": {
       "id": "robota::11115817",
@@ -934,6 +934,17 @@
       "platform": "robota.ua",
       "source_type": "robota",
       "first_seen": "2026-11-26T01:17:57.222933+00:00",
+      "is_new": true,
+      "delivered": false
+    },
+    "robota::11424371": {
+      "id": "robota::11424371",
+      "native_id": "11424371",
+      "title": "Відкрита вакансія",
+      "url": "https://robota.ua/company17059331/vacancy11424371",
+      "platform": "robota.ua",
+      "source_type": "robota",
+      "first_seen": "2026-11-28T00:49:38.503167+00:00",
       "is_new": true,
       "delivered": false
     }
